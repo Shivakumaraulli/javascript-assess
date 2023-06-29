@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            #dynamic-list{
+                width: 80%;
+                height: 40px;
+                border: 1px solid black;
+                background-color: grey;
+                color: white;
+                font-style: bold;
+                padding: 8px;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            .sub-container{
+                background-color: aliceblue;
+            }
+            button{
+                background-color: blue;
+                color: white;
+                margin: 40px;
+                margin-left: 400px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+      <div class="container">
+           
+                
+                <ul id="dynamic-list">
+                    <li id="candidate">Item 1</li>
+                </ul>
+                    <div class="input-group-append">
+                        <button onclick="addItem()">Add Item</button>
+                        <button onclick="removeItem()">Remove Item</button>
+                    </div>
+                </div>
+                
+            
+      </div>
+        
+        <script>
+            
+            function addItem(){
+                var ul = document.getElementById('dynamic-list');
+                var candidate = document.getElementById("candidate");
+                var li = document.createElement('li');
+                li.setAttribute('id', candidate.value);
+                li.appendChild(document.createTextNode(candidate.value));
+                ul.appendChild(li);
+            }
+            function removeItem(){
+                var ul = document.getElementById('dynamic-list');
+                var candidate = document.getElementById("candidate");
+                var item = document.getElementById(candidate.value);
+                ul.removeChild(item);
+            }
+        </script>
+    </body>
+</html>
